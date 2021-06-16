@@ -34,6 +34,26 @@ if (
     alert('Please select at least one option');
 }
 
+var passwordOptions = {
+    length: length,
+    confirmLowerCase: confirmLowerCase,
+    confirmUpperCase: confirmUpperCase,
+    confirmNumber: confirmNumber,
+    confirmSpecialCharacter: confirmSpecialCharacter,
+};
+
+function getRandom(arr) {
+    var randIndex = Math.floor(Math.random() * arr.length);
+    var randElement = arr[randIndex];
+    return randElement;
+}
+
+  function generatePassword() {
+    var options = getPassword();
+}
+
+
+
 
 
 // Assignment Code
