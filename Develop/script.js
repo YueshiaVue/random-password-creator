@@ -1,6 +1,18 @@
 // Assignment Code
 var generateBtn = document.querySelector("generate");
 var passwordText = document.querySelector("password");
+var lowerEl = document.getElementById('lowercase')
+var upperEl = document.getElementById('uppercase')
+var characterEl = document.getElementById('character')
+var lengthEl = document.getElementById('length')
+var numberEl = document.getElementById('number')
+
+const randomfunction = {
+    lower: generateLower,
+    upper: generateUpper,
+    number: generateCharacter,
+    symbol: generateNumber
+  };
 
 function generateLower() {
     var lower = 'abcdefghijklmnopqrstuvwxyz'
@@ -22,16 +34,36 @@ function generateNumber() {
 }
 
 
-
-
-// Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
+function writePassword(lower, upper, number, symbol, length) {
+    let writePassword = '';
+    const select = lower + upper + number + symbol;
+    const filtered = [ {lower}, { upper}, {number}, {symbol}].filter(item => Object.values(item)[0]);
   
+  if (select === 0) {
+    return '';
+  }
+    for (let i = 0; i < length; i += select) {
+      filtered.forEach(type => {
+        const newPassword = Object.keys(type)[0];
+  
+        writePassword += randomfunction[newPassword]();
+      });
+    }
+    var password = writePassword.slice(0, length); 
+    return password;
+  }
 
-  passwordText.value = password;
+  generateElement.addEventListener("click", function() {
+    let length = lengthElement.value;
+    const lowerSelection = lowercaseElement.checked;
+    const upperSelection = uppercaseElement.checked;
+    const numberSelection = numbersElement.checked;
+    const symbolSelection = symbolsElement.checked;
+    
+    if (length < 8 || length > 128) {
+      length = prompt("Please enter the correct length of your password.")
+    };
+    
+       ent.innerText = writePassword(lowerSelection, upperSelection, numberSelection, symbolSelection, length);
+  });
 
-}
-
-// Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
