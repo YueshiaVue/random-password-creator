@@ -1,4 +1,3 @@
-// Assignment Code
 var generateBtn = document.querySelector("generate");
 var passwordText = document.querySelector("password");
 var lowerEl = document.getElementById('lowercase')
@@ -53,17 +52,17 @@ function writePassword(lower, upper, number, symbol, length) {
     return password;
   }
 
-  generateElement.addEventListener("click", function() {
-    let length = lengthElement.value;
-    const lowerSelection = lowercaseEl.checked;
-    const upperSelection = uppercaseEl.checked;
-    const numberSelection = numbersEl.checked;
-    const symbolSelection = symbolsEl.checked;
+  generateBtn.addEventListener("click", function() {
+    let length = lengthEl.value;
+    const lowerSelection = lowerEl.checked;
+    const upperSelection = upperEl.checked;
+    const numberSelection = numberEl.checked;
+    const characterSelection = characterEl.checked;
     
     if (length < 8 || length > 128) {
       length = prompt("Please enter the correct length of your password.")
     };
     
-       ent.innerText = writePassword(lowerSelection, upperSelection, numberSelection, symbolSelection, length);
+       ent.innerText = writePassword(lowerSelection, upperSelection, numberSelection, characterSelection, length);
   });
 
