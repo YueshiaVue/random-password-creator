@@ -17,6 +17,11 @@ body {
   background-color: #f9fbfd;
 }
 
+.h1 {
+  font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+}
+
 .wrapper {
   padding-top: 30px;
   padding-left: 20px;
@@ -135,3 +140,4 @@ button[disabled] {
     font-size: 0.8rem;
   }
 }
+
