@@ -52,7 +52,7 @@ function writePassword(lower, upper, number, symbol, length) {
     return password;
   }
 
-  generateBtn.addEventListener("click", function() {
+  generateBtn.addEventListener("click", function(length) {
     let length = lengthEl.value;
     const lowerSelection = lowerEl.checked;
     const upperSelection = upperEl.checked;
