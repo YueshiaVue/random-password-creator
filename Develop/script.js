@@ -55,10 +55,10 @@ function writePassword(lower, upper, number, symbol, length) {
 
   generateElement.addEventListener("click", function() {
     let length = lengthElement.value;
-    const lowerSelection = lowercaseElement.checked;
-    const upperSelection = uppercaseElement.checked;
-    const numberSelection = numbersElement.checked;
-    const symbolSelection = symbolsElement.checked;
+    const lowerSelection = lowercaseEl.checked;
+    const upperSelection = uppercaseEl.checked;
+    const numberSelection = numbersEl.checked;
+    const symbolSelection = symbolsEl.checked;
     
     if (length < 8 || length > 128) {
       length = prompt("Please enter the correct length of your password.")
